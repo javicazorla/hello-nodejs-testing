@@ -21,7 +21,7 @@ pipeline {
             }
             post {
                 always {
-                    step([$class: "TapPublisher", testResults: "**/test/tap-unit.log"])
+                    step([$class: "TapPublisher", testResults: "test/tap-unit.log"])
                 }
             }
 
