@@ -5,8 +5,6 @@ pipeline {
         stage('Build') {
 
             steps {
-                sh 'npm install -g yarn'
-                sh 'yarn install'
                 sh 'yarn'
             }
         }
@@ -15,6 +13,7 @@ pipeline {
 
             steps { 
                 sh 'yarn run test'
+                sh 'yarn run ci-test'
             }
         }
     }
