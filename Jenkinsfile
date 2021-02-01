@@ -9,15 +9,15 @@ pipeline {
         stage('Build') {
 
             steps {
-                sh 'npm install'
+                sh 'yarn install'
             }
         }
 
         stage('Test') {
 
             steps { 
-                sh 'npm run test'
-                sh 'npm run ci-test'
+                sh 'yarn run test'
+                sh 'yarn run ci-test'
             }
         }
     }
