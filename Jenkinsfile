@@ -19,6 +19,12 @@ pipeline {
                 sh 'yarn run test'
                 sh 'yarn run ci-test'
             }
+            post {
+                always {
+                    step([$class: "TapPublisher", testResults: "**/test/tap-unit.log"])
+                }
+            }
+
         }
     }
 }
