@@ -36,7 +36,7 @@ pipeline {
         }
         stage("Trivy Scan"){
             steps{
-                sh 'trivy filesystem .'
+                sh 'trivy filesystem --format json --output trivy-results.json .'
             }
             post {
                 always {
