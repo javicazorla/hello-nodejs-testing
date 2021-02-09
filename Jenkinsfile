@@ -36,7 +36,7 @@ pipeline {
         }
         stage("Trivy Scan"){
             steps{
-                sh 'trivy image --format json --output trivy-results.json debian:10.8'
+                sh 'trivy filesystem .'
             }
             post {
                 always {
